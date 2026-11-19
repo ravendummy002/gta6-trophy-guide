@@ -3,23 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Trophy Atlas — GTA VI PS5 trophy guide &amp; tracker</title>
+<meta name="description" content="An offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI: official names, descriptions and grades, saved progress, filters, a spoiler setting, a roadmap to the platinum and cited guides.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="masthead">
+  <div class="masthead-title">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; unofficial fan guide</p>
+    <h1>Leonida Trophy Atlas</h1>
+    <p class="subtitle">All 55 trophies, tracked offline. Tick them off, read the guide for each, and follow the road to the platinum.</p>
+  </div>
+  <div class="progress-card" id="progress-card" aria-live="polite">
+    <p class="progress-big"><span id="earned-count">0</span><span class="progress-of"> / 55 earned</span></p>
+    <div class="progress-bar" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progress-bar-wrap"><div class="progress-fill" id="progress-fill"></div></div>
+    <p class="progress-grades" id="grade-counts"></p>
+    <p class="progress-points" id="points-line"></p>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
-<script type="module" src="app.js"></script>
+
+<nav class="tabs" aria-label="Guide sections">
+  <button type="button" class="tab active" data-tab="checklist" id="tab-checklist">Checklist</button>
+  <button type="button" class="tab" data-tab="roadmap" id="tab-roadmap">Roadmap to platinum</button>
+  <button type="button" class="tab" data-tab="missables" id="tab-missables">Missables</button>
+  <button type="button" class="tab" data-tab="about" id="tab-about">About &amp; sources</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view active" aria-label="Trophy checklist">
+    <div class="controls">
+      <label class="search-label">Search <input id="search" type="search" placeholder="Name or description&hellip;" autocomplete="off"></label>
+      <label>Kind
+        <select id="kind">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="characters">Side characters</option>
+          <option value="activities">Activities</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="crime">Crime &amp; heists</option>
+          <option value="money">Money</option>
+          <option value="hidden">Hidden moments</option>
+          <option value="meta">Platinum &amp; 100%</option>
+        </select>
+      </label>
+      <label>Grade
+        <select id="grade">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="check"><input id="missable-only" type="checkbox"> Missable only</label>
+      <label class="check"><input id="unearned-only" type="checkbox"> Unearned only</label>
+      <label class="check spoiler"><input id="spoilers" type="checkbox"> Hide story spoilers</label>
+      <span class="controls-spacer"></span>
+      <button id="export" type="button">Export progress</button>
+      <label class="import-button">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+      <button id="reset" type="button" class="quiet">Reset</button>
+    </div>
+    <p class="result-line" id="result-line" aria-live="polite"></p>
+    <div class="split">
+      <div class="list-pane">
+        <table class="trophy-table">
+          <thead><tr><th class="col-earned">Earned</th><th>Trophy</th><th class="col-grade">Grade</th><th class="col-kind">Kind</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <aside class="detail-pane" id="detail" aria-label="Trophy guide"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" aria-label="Roadmap to the platinum">
+    <div class="nextup" id="nextup"></div>
+    <div id="roadmap"></div>
+  </section>
+
+  <section id="view-missables" class="view" aria-label="Missable trophies">
+    <div id="missables"></div>
+  </section>
+
+  <section id="view-about" class="view" aria-label="About and sources">
+    <div class="about" id="about"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Trophy Atlas is an unofficial fan guide. It is not affiliated with Rockstar Games, Take-Two Interactive or PlayStation, and it shows no Rockstar logo or official artwork. Trophy names, descriptions and grades are the official PlayStation text; every guide is written for this entry in its own words and cites its sources. Your progress never leaves this browser.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

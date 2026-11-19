@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-checklist.jpg","path":"/","setup":"13 of 55 earned seeded in localStorage; spoilers off; first trophy selected","shows":"Checklist with official names, descriptions and grades, progress card, filters, spoiler toggle, export/import","viewport":{"height":800,"width":1280}},{"file":"2-guide.jpg","path":"/","setup":"13 of 55 earned seeded; The Shootist (id 17) selected","shows":"Guide detail pane: the trophy's guide, target count (42 challenges, all gold) and cited sources","viewport":{"height":800,"width":1280}},{"file":"3-roadmap.jpg","path":"/","setup":"13 of 55 earned seeded; Roadmap tab open","shows":"Roadmap to the platinum: stages in order with per-stage progress and the Next up planner","viewport":{"height":800,"width":1280}},{"file":"4-spoilers.jpg","path":"/","setup":"13 of 55 earned seeded; spoiler setting on","shows":"Spoiler setting at work: unearned hidden trophies masked by name and description","viewport":{"height":800,"width":1280}}]
